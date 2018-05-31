@@ -1,0 +1,9 @@
+Feature,Type,Val_Type,Weight,Max_Rank,Min_Val,Max_Val,Distinct_Val
+Timestamp,numeric,discrete,1,,1,30162,
+age,numeric,discrete,1,,1,100,
+fnlwgt,numeric,discrete,1,,1,1500000,
+education.num,numeric,discrete,1,,1,20,
+capital.gain,numeric,discrete,1,,0,100000,
+capital.loss,numeric,discrete,1,,0,5000,
+hours.per.week,numeric,discrete,1,,1,100,
+class,categorical,nominal,1,,,,"{<=50K, >50K}"

@@ -1,0 +1,14 @@
+Feature,Type,Val_Type,Weight,Max_Rank,Min_Val,Max_Val,Distinct_Val
+Timestamp,numeric,discrete,1,,1,30162,
+age,numeric,discrete,1,,1,100,
+fnlwgt,numeric,discrete,1,,1,1500000,
+education.num,numeric,discrete,1,,1,20,
+capital.gain,numeric,discrete,1,,0,100000,
+capital.loss,numeric,discrete,1,,0,5000,
+hours.per.week,numeric,discrete,1,,1,100,
+education,categorical,nominal,1,,,,"{Bachelors, Some-college, 11th, HS-grad, Prof-school, Assoc-acdm, Assoc-voc, 9th, 7th-8th, 12th, Masters, 1st-4th, 10th, Doctorate, 5th-6th, Preschool}"
+marital.status,categorical,nominal,1,,,,"{Married-civ-spouse, Divorced, Never-married, Separated, Widowed, Married-spouse-absent, Married-AF-spouse}"
+workclass,categorical,nominal,1,,,,"{Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov, Without-pay, Never-worked}"
+native.country,categorical,nominal,1,,,,"{United-States, Cambodia, England, Puerto-Rico, Canada, Germany, Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador, Trinadad&Tobago, Peru, Hong, Holand-Netherlands}"
+occupation,categorical,nominal,1,,,,"{Tech-support, Craft-repair, Other-service, Sales, Exec-managerial, Prof-specialty, Handlers-cleaners, Machine-op-inspct, Adm-clerical, Farming-fishing, Transport-moving, Priv-house-serv, Protective-serv, Armed-Forces}"
+class,categorical,nominal,1,,,,"{<=50K, >50K}"

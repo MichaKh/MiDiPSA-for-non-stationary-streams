@@ -1,0 +1,6 @@
+Feature,Type,Val_Type,Weight,Max_Rank,Min_Val,Max_Val,Distinct_Val
+Timestamp,numeric,discrete,1,,1,60000,
+Attr1,numeric,continuous,1,,0,10,
+Attr2,numeric,continuous,1,,0,10,
+Attr3,numeric,continuous,1,,0,10,
+Class,categorical,nominal,1,,,,"{0,1}"

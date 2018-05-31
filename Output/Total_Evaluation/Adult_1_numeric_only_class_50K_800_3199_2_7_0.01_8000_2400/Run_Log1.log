@@ -1,0 +1,71 @@
+2018-05-31 12:40:58,815 - root - INFO - ---------- Program started ----------
+2018-05-31 12:40:58,815 - root - INFO - Dataset: Adult_1_numeric_only_class_50K
+2018-05-31 12:40:58,815 - StreamHandler.StreamReader - INFO - Preparing stream dataset for anonymization...
+2018-05-31 12:40:59,509 - StreamHandler.StreamReader - INFO - Total 30162 records in stream!
+2018-05-31 12:40:59,509 - StreamHandler.StreamReader - INFO - Quasi-identifier consists of 6 numeric attributes and 0 categorical attributes. Sensitive attribute is 'class' (categorical)
+2018-05-31 12:40:59,509 - root - INFO - Preparation of stream dataset completed!
+2018-05-31 12:40:59,509 - root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018-05-31 12:40:59,509 - root - INFO - Initializing anonymizer...
+2018-05-31 12:40:59,509 - Anonymizer.MicroaggAnonymizer - INFO - Initializing micro-aggregation anonymizer...
+2018-05-31 12:40:59,509 - Anonymizer.MicroaggAnonymizer - INFO - Algorithm parameters: k=(800, 3199), l=2, c=7, eps=0.01, b=2400, delta=8000, dist_thr=0.6, cd_thr=1.2
+2018-05-31 12:40:59,509 - Anonymizer.MicroaggAnonymizer - INFO - Running anonymizer...
+2018-05-31 12:41:47,500 - Anonymizer.MicroaggAnonymizer - INFO - Anonymization completed!
+2018-05-31 12:41:47,500 - root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018-05-31 12:41:47,500 - root - INFO - Calculating performance report to CSV file
+2018-05-31 12:41:47,500 - root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018-05-31 12:41:47,500 - root - INFO - Initiating evaluation report...
+2018-05-31 12:41:47,500 - PerformanceEstimators.ExecutionTimeMetric.ExecutionTimeMetric - INFO - Execution time Metric: 00:00:47 seconds
+2018-05-31 12:41:47,500 - PerformanceEstimators.ExecutionTimeMetric.PublishingDelayTimeMetric - INFO - Average Stream Publishing Delay Metric: 115.474
+2018-05-31 12:41:47,500 - PerformanceEstimators.InfoLossMetric.MSEInfoLossMetric - INFO - MSE InfoLoss Metric: 0.075
+2018-05-31 12:41:47,500 - PerformanceEstimators.InfoLossMetric.SSEInfoLossMetric - INFO - SSE InfoLoss Metric: 2405936354.302
+2018-05-31 12:41:47,500 - PerformanceEstimators.InfoLossMetric.RelativeErrorInfoLossMetric - INFO - Mean Relative Percentage Error InfoLoss Metric (Percent): 18.565
+2018-05-31 12:41:47,500 - PerformanceEstimators.InfoLossMetric.ClassificationInfoLossMetric - INFO - Classification InfoLoss Metric: 0.249
+2018-05-31 12:41:47,500 - PerformanceEstimators.DisclosureRiskMetric.BufferedDisclosureRiskMetric - INFO - Disclosure risk Metric: 0.007
+2018-05-31 12:41:47,500 - Evaluator.EvaluationReport - INFO - Num of randomized (suppressed) records due to insufficient LC-diversity  = 0
+2018-05-31 12:41:47,500 - Evaluator.EvaluationReport - INFO - Num of randomized (suppressed) records due to insufficient K-Cluster size = 0
+2018-05-31 12:41:47,500 - Evaluator.EvaluationReport - INFO - Total opened clusters  = 10
+2018-05-31 12:41:48,111 - Evaluator.EvaluationReport - INFO - Writing original records to CSV file in path: Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\original.csv
+2018-05-31 12:41:48,111 - Evaluator.EvaluationReport - INFO - Writing anonymized records to CSV file in path: Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\anonymized.csv
+2018-05-31 12:41:48,203 - Evaluator.EvaluationReport - INFO - Writing original records to ARFF file in path: Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\original.arff
+2018-05-31 12:41:48,203 - Evaluator.EvaluationReport - INFO - Writing original records to ARFF file in path: Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\original.arff
+2018-05-31 12:41:50,398 - root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018-05-31 12:41:50,398 - root - INFO - Performing post-analysis evaluation using stream classifier
+2018-05-31 12:41:50,398 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON original.arff USING NaiveBayes EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:41:51,608 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.88986013986
+2018-05-31 12:41:51,608 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_NaiveBayes_original.csv
+2018-05-31 12:41:51,608 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON anonymized.arff USING NaiveBayes EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:41:52,823 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.515151515152
+2018-05-31 12:41:52,823 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_NaiveBayes_anonymized.csv
+2018-05-31 12:41:52,871 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON original.arff USING AdaptiveRandomForest EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:42:07,482 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.88986013986
+2018-05-31 12:42:07,482 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_AdaptiveRandomForest_original.csv
+2018-05-31 12:42:07,482 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON anonymized.arff USING AdaptiveRandomForest EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:42:23,977 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.581002331002
+2018-05-31 12:42:23,977 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_AdaptiveRandomForest_anonymized.csv
+2018-05-31 12:42:24,025 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON original.arff USING MajorityClass EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:42:25,279 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.377622377622
+2018-05-31 12:42:25,279 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_MajorityClass_original.csv
+2018-05-31 12:42:25,279 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON anonymized.arff USING MajorityClass EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:42:26,482 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.377622377622
+2018-05-31 12:42:26,482 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_MajorityClass_anonymized.csv
+2018-05-31 12:42:26,528 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON original.arff USING HoeffdingAdaptiveTree EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:42:28,770 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.922494172494
+2018-05-31 12:42:28,770 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_HoeffdingAdaptiveTree_original.csv
+2018-05-31 12:42:28,770 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON anonymized.arff USING HoeffdingAdaptiveTree EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:42:31,029 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.540792540793
+2018-05-31 12:42:31,029 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_HoeffdingAdaptiveTree_anonymized.csv
+2018-05-31 12:42:31,075 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON original.arff USING SGD EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:42:32,306 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.559440559441
+2018-05-31 12:42:32,306 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_SGD_original.csv
+2018-05-31 12:42:32,306 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON anonymized.arff USING SGD EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:42:33,513 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.452797202797
+2018-05-31 12:42:33,513 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_SGD_anonymized.csv
+2018-05-31 12:42:33,575 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON original.arff USING LeveragingBag EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:42:43,948 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.935897435897
+2018-05-31 12:42:43,948 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_LeveragingBag_original.csv
+2018-05-31 12:42:43,948 - Evaluator.PostEvaluator.APostEvaluator - INFO - Executing external subprocess to MOA: EvaluatePrequential ON anonymized.arff USING LeveragingBag EVALUATED BY ImbalancedWindowEvaluator
+2018-05-31 12:42:54,345 - Evaluator.PostEvaluator.APostEvaluator - INFO - AUC=0.513403263403
+2018-05-31 12:42:54,345 - Evaluator.PostEvaluator.APostEvaluator - INFO - Subprocess output is written to: C:\Users\micha\PycharmProjects\MiDiPSA_Public\Output\Total_Evaluation\Adult_1_numeric_only_class_50K_800_3199_2_7_0.01_8000_2400\EvaluatePrequential_LeveragingBag_anonymized.csv
+2018-05-31 12:42:54,391 - root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018-05-31 12:42:54,391 - Evaluator.EvaluationReport - INFO - Writing evaluation report to CSV file in path: .\Reports\report3.csv
+2018-05-31 12:42:54,407 - root - INFO - Done!
